@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
+import Square from './Square';
 
 class PlayField extends Component {
     render() {
         return (
             <View style={styles.container}>
                 <View style={styles.row}>
-                    <View style={styles.cell}></View>
-                    <View style={styles.cell}></View>
-                    <View style={styles.cell}></View>
+                    <Square />
+                    <Square />
+                    <Square />
                 </View>
                 <View style={styles.row}>
-                    <View style={styles.cell}></View>
-                    <View style={styles.cell}></View>
-                    <View style={styles.cell}></View>
+                    <Square />
+                    <Square />
+                    <Square />
                 </View>
                 <View style={styles.row}>
-                    <View style={styles.cell}></View>
-                    <View style={styles.cell}></View>
-                    <View style={styles.cell}></View>
+                    <Square />
+                    <Square />
+                    <Square />
                 </View>
             </View>
         )
@@ -32,11 +33,6 @@ const styles = StyleSheet.create({
     row: {
         flexDirection: "row",
     },
-    cell: {
-        width: 100,
-        height: 100,
-        borderWidth: 1,
-    }
 })
 
 export default PlayField;
