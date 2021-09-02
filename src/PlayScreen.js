@@ -24,12 +24,14 @@ class PlayScreen extends Component {
     }
 
     markSquare(squareNumber) {
-        let tempBoardSquares = _.clone(this.state.boardSquares);
-        tempBoardSquares[squareNumber].symbol = this.state.whoseTurn;
-        this.setState(state => ({
-            boardSquares: tempBoardSquares,
-            whoseTurn: state.whoseTurn === "X" ? "O" : "X"
-        }))
+        if (this.state.boardSquares[squareNumber].symbol === null) {
+            let tempBoardSquares = _.clone(this.state.boardSquares);
+            tempBoardSquares[squareNumber].symbol = this.state.whoseTurn;
+            this.setState(state => ({
+                boardSquares: tempBoardSquares,
+                whoseTurn: state.whoseTurn === "X" ? "O" : "X"
+            }))
+        }
     }
 
     render() {
