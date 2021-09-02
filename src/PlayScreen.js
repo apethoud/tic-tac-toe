@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import GameManagement from './GameManagement';
+import PlayField from './PlayField';
 
 class PlayScreen extends Component {
     render() {
         return (
-            <View style={styles.container}>
-                <Text>grid goes here</Text>
-            </View>
+            <>
+                <GameManagement />
+                <PlayField />
+            </>
         )
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        width: 300,
-        height: 300,
-        borderWidth: 2,
-        backgroundColor: "#E6C8EF"
-    }
-})
 
 export default PlayScreen;
