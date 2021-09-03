@@ -12,6 +12,18 @@ const POSSIBLE_WINS = [
     [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6]
+];
+
+const BLANK_BOARD = [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
 ]
 
 class PlayScreen extends Component {
@@ -19,20 +31,11 @@ class PlayScreen extends Component {
         super(props);
         this.state = {
             whoseTurn: "X",
-            boardSquareSymbols: [
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null
-            ]
+            boardSquareSymbols: _.clone(BLANK_BOARD)
         };
         this.markSquare = this.markSquare.bind(this);
         this.getCompletedRow = this.getCompletedRow.bind(this);
+        this.resetBoard = this.resetBoard.bind(this);
     }
 
     markSquare(squareNumber) {
@@ -64,6 +67,10 @@ class PlayScreen extends Component {
         return completedRowData;
     }
 
+    resetBoard() {
+        this.setState({ boardSquareSymbols: _.clone(BLANK_BOARD) })
+    }
+
     render() {
         const completedRow = this.getCompletedRow();
         return (
@@ -71,6 +78,7 @@ class PlayScreen extends Component {
                 <GameManagement 
                     whoseTurn={this.state.whoseTurn}
                     completedRow={completedRow}
+                    resetBoard={this.resetBoard}
                 />
                 <PlayField 
                     boardSquareSymbols={this.state.boardSquareSymbols}
