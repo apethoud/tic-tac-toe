@@ -7,11 +7,11 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 class Square extends Component {
     render() {
 
-        const { number, symbol, markSquare } = this.props;
+        const { number, symbol, markSquare, inCompletedRow } = this.props;
 
         return (
             <Pressable onPress={() => markSquare(number)}>
-                <View style={styles.cell}>
+                <View style={[ styles.cell, inCompletedRow ? styles.completedRowCell : null ]}>
                     {symbol === "X" && (
                         <FontAwesomeIcon 
                             icon={ faTimes } 
@@ -37,6 +37,9 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         justifyContent: "center",
         alignItems: "center",
+    },
+    completedRowCell: {
+        backgroundColor: "lightgreen"
     }
 })
 

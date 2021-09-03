@@ -21,6 +21,7 @@ class PlayScreen extends Component {
             ]
         };
         this.markSquare = this.markSquare.bind(this);
+        this.getCompletedRow = this.getCompletedRow.bind(this);
     }
 
     markSquare(squareNumber) {
@@ -34,12 +35,21 @@ class PlayScreen extends Component {
         }
     }
 
+    getCompletedRow() {
+        let boardSquares = this.state.boardSquares;
+        // if there are three indeces that have the same symbol and 
+        return [0, 3, 6];
+    }
+
     render() {
         return (
             <>
-                <GameManagement />
+                <GameManagement 
+                    getCompletedRow={this.getCompletedRow}
+                />
                 <PlayField 
                     boardSquares={this.state.boardSquares}
+                    getCompletedRow={this.getCompletedRow}
                     markSquare={this.markSquare}
                 />
             </>
