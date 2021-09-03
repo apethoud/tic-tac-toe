@@ -8,16 +8,16 @@ class PlayScreen extends Component {
         super(props);
         this.state = {
             whoseTurn: "X",
-            boardSquares: [
-                { symbol: null },
-                { symbol: null },
-                { symbol: null },
-                { symbol: null },
-                { symbol: null },
-                { symbol: null },
-                { symbol: null },
-                { symbol: null },
-                { symbol: null }
+            boardSquareSymbols: [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
             ]
         };
         this.markSquare = this.markSquare.bind(this);
@@ -25,19 +25,19 @@ class PlayScreen extends Component {
     }
 
     markSquare(squareNumber) {
-        if (this.state.boardSquares[squareNumber].symbol === null) {
-            let tempBoardSquares = _.clone(this.state.boardSquares);
-            tempBoardSquares[squareNumber].symbol = this.state.whoseTurn;
+        if (this.state.boardSquareSymbols[squareNumber] === null) {
+            let tempboardSquareSymbols = _.clone(this.state.boardSquareSymbols);
+            tempboardSquareSymbols[squareNumber] = this.state.whoseTurn;
             this.setState(state => ({
-                boardSquares: tempBoardSquares,
+                boardSquareSymbols: tempboardSquareSymbols,
                 whoseTurn: state.whoseTurn === "X" ? "O" : "X"
             }))
         }
     }
 
     getCompletedRow() {
-        let boardSquares = this.state.boardSquares;
-        // if there are three indeces that have the same symbol and 
+        let boardSquareSymbols = _.clone(this.state.boardSquareSymbols);
+        // if there are three squares that have the same symbol and their index values are the same number apart, return those three numbers in an array.
         return [0, 3, 6];
     }
 
@@ -48,7 +48,7 @@ class PlayScreen extends Component {
                     getCompletedRow={this.getCompletedRow}
                 />
                 <PlayField 
-                    boardSquares={this.state.boardSquares}
+                    boardSquareSymbols={this.state.boardSquareSymbols}
                     getCompletedRow={this.getCompletedRow}
                     markSquare={this.markSquare}
                 />

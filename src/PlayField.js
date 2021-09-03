@@ -6,7 +6,7 @@ class PlayField extends Component {
 
     render() {
 
-        const { boardSquares, markSquare, getCompletedRow } = this.props;
+        const { boardSquareSymbols, markSquare, getCompletedRow } = this.props;
         const hasCompletedRow = Boolean(getCompletedRow());
 
         return (
@@ -14,19 +14,19 @@ class PlayField extends Component {
                 <View style={styles.row}>
                     <Square 
                         number={0}
-                        symbol={boardSquares[0].symbol}
+                        symbol={boardSquareSymbols[0]}
                         markSquare={markSquare}
                         inCompletedRow={hasCompletedRow && getCompletedRow().includes(0)}
                     />
                     <Square 
                         number={1}
-                        symbol={boardSquares[1].symbol}
+                        symbol={boardSquareSymbols[1]}
                         markSquare={markSquare}
                         inCompletedRow={hasCompletedRow && getCompletedRow().includes(1)}
                     />
                     <Square 
                         number={2}
-                        symbol={boardSquares[2].symbol}
+                        symbol={boardSquareSymbols[2]}
                         markSquare={markSquare}
                         inCompletedRow={hasCompletedRow && getCompletedRow().includes(2)}
                     />
@@ -34,19 +34,19 @@ class PlayField extends Component {
                 <View style={styles.row}>
                     <Square 
                         number={3}
-                        symbol={boardSquares[3].symbol}
+                        symbol={boardSquareSymbols[3]}
                         markSquare={markSquare}
                         inCompletedRow={hasCompletedRow && getCompletedRow().includes(3)}
                     />
                     <Square 
                         number={4}
-                        symbol={boardSquares[4].symbol}
+                        symbol={boardSquareSymbols[4]}
                         markSquare={markSquare}
                         inCompletedRow={hasCompletedRow && getCompletedRow().includes(4)}
                     />
                     <Square 
                         number={5}
-                        symbol={boardSquares[5].symbol}
+                        symbol={boardSquareSymbols[5]}
                         markSquare={markSquare}
                         inCompletedRow={hasCompletedRow && getCompletedRow().includes(5)}
                     />
@@ -54,19 +54,19 @@ class PlayField extends Component {
                 <View style={styles.row}>
                     <Square 
                         number={6}
-                        symbol={boardSquares[6].symbol}
+                        symbol={boardSquareSymbols[6]}
                         markSquare={markSquare}
                         inCompletedRow={hasCompletedRow && getCompletedRow().includes(6)}
                     />
                     <Square 
                         number={7}
-                        symbol={boardSquares[7].symbol}
+                        symbol={boardSquareSymbols[7]}
                         markSquare={markSquare}
                         inCompletedRow={hasCompletedRow && getCompletedRow().includes(7)}
                     />
                     <Square 
                         number={8}
-                        symbol={boardSquares[8].symbol}
+                        symbol={boardSquareSymbols[8]}
                         markSquare={markSquare}
                         inCompletedRow={hasCompletedRow && getCompletedRow().includes(8)}
                     />
