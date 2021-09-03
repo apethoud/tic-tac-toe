@@ -76,6 +76,7 @@ class PlayScreen extends Component {
         return (
             <>
                 <GameManagement 
+                    boardSquareSymbols={this.state.boardSquareSymbols}
                     whoseTurn={this.state.whoseTurn}
                     completedRow={completedRow}
                     resetBoard={this.resetBoard}
