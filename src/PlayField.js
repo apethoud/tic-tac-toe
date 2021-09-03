@@ -16,19 +16,19 @@ class PlayField extends Component {
                         number={0}
                         symbol={boardSquareSymbols[0]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().includes(0)}
+                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(0)}
                     />
                     <Square 
                         number={1}
                         symbol={boardSquareSymbols[1]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().includes(1)}
+                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(1)}
                     />
                     <Square 
                         number={2}
                         symbol={boardSquareSymbols[2]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().includes(2)}
+                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(2)}
                     />
                 </View>
                 <View style={styles.row}>
@@ -36,19 +36,19 @@ class PlayField extends Component {
                         number={3}
                         symbol={boardSquareSymbols[3]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().includes(3)}
+                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(3)}
                     />
                     <Square 
                         number={4}
                         symbol={boardSquareSymbols[4]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().includes(4)}
+                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(4)}
                     />
                     <Square 
                         number={5}
                         symbol={boardSquareSymbols[5]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().includes(5)}
+                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(5)}
                     />
                 </View>
                 <View style={styles.row}>
@@ -56,19 +56,19 @@ class PlayField extends Component {
                         number={6}
                         symbol={boardSquareSymbols[6]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().includes(6)}
+                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(6)}
                     />
                     <Square 
                         number={7}
                         symbol={boardSquareSymbols[7]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().includes(7)}
+                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(7)}
                     />
                     <Square 
                         number={8}
                         symbol={boardSquareSymbols[8]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().includes(8)}
+                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(8)}
                     />
                 </View>
             </View>

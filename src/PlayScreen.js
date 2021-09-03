@@ -38,7 +38,12 @@ class PlayScreen extends Component {
     getCompletedRow() {
         let boardSquareSymbols = _.clone(this.state.boardSquareSymbols);
         // if there are three squares that have the same symbol and their index values are the same number apart, return those three numbers in an array.
-        return [0, 3, 6];
+        // if boardSquareSymbols contains the same non-null value in three indeces that are equidistant, return those three indeces in an array.
+        // if bSS contains three
+        return {
+            winningSymbol: "X",
+            winningSquares: [0, 3, 6]
+        };
     }
 
     render() {
