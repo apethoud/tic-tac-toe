@@ -6,8 +6,7 @@ class PlayField extends Component {
 
     render() {
 
-        const { boardSquareSymbols, markSquare, getCompletedRow } = this.props;
-        const hasCompletedRow = Boolean(getCompletedRow());
+        const { boardSquareSymbols, markSquare, completedRow } = this.props;
 
         return (
             <View style={styles.container}>
@@ -16,19 +15,19 @@ class PlayField extends Component {
                         number={0}
                         symbol={boardSquareSymbols[0]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(0)}
+                        inCompletedRow={completedRow && completedRow.winningSquares.includes(0)}
                     />
                     <Square 
                         number={1}
                         symbol={boardSquareSymbols[1]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(1)}
+                        inCompletedRow={completedRow && completedRow.winningSquares.includes(1)}
                     />
                     <Square 
                         number={2}
                         symbol={boardSquareSymbols[2]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(2)}
+                        inCompletedRow={completedRow && completedRow.winningSquares.includes(2)}
                     />
                 </View>
                 <View style={styles.row}>
@@ -36,19 +35,19 @@ class PlayField extends Component {
                         number={3}
                         symbol={boardSquareSymbols[3]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(3)}
+                        inCompletedRow={completedRow && completedRow.winningSquares.includes(3)}
                     />
                     <Square 
                         number={4}
                         symbol={boardSquareSymbols[4]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(4)}
+                        inCompletedRow={completedRow && completedRow.winningSquares.includes(4)}
                     />
                     <Square 
                         number={5}
                         symbol={boardSquareSymbols[5]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(5)}
+                        inCompletedRow={completedRow && completedRow.winningSquares.includes(5)}
                     />
                 </View>
                 <View style={styles.row}>
@@ -56,19 +55,19 @@ class PlayField extends Component {
                         number={6}
                         symbol={boardSquareSymbols[6]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(6)}
+                        inCompletedRow={completedRow && completedRow.winningSquares.includes(6)}
                     />
                     <Square 
                         number={7}
                         symbol={boardSquareSymbols[7]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(7)}
+                        inCompletedRow={completedRow && completedRow.winningSquares.includes(7)}
                     />
                     <Square 
                         number={8}
                         symbol={boardSquareSymbols[8]}
                         markSquare={markSquare}
-                        inCompletedRow={hasCompletedRow && getCompletedRow().winningSquares.includes(8)}
+                        inCompletedRow={completedRow && completedRow.winningSquares.includes(8)}
                     />
                 </View>
             </View>

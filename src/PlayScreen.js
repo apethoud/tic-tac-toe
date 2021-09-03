@@ -3,6 +3,17 @@ import GameManagement from './GameManagement';
 import PlayField from './PlayField';
 import _ from 'lodash';
 
+const POSSIBLE_WINS = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+]
+
 class PlayScreen extends Component {
     constructor(props) {
         super(props);
@@ -37,24 +48,32 @@ class PlayScreen extends Component {
 
     getCompletedRow() {
         let boardSquareSymbols = _.clone(this.state.boardSquareSymbols);
-        // if there are three squares that have the same symbol and their index values are the same number apart, return those three numbers in an array.
-        // if boardSquareSymbols contains the same non-null value in three indeces that are equidistant, return those three indeces in an array.
-        // if bSS contains three
-        return {
-            winningSymbol: "X",
-            winningSquares: [0, 3, 6]
-        };
+        let completedRowData = null;
+        _.forEach(POSSIBLE_WINS, possibleWinIndexes => {
+            if (
+                boardSquareSymbols[possibleWinIndexes[0]] !== null &&
+                boardSquareSymbols[possibleWinIndexes[0]] === boardSquareSymbols[possibleWinIndexes[1]] &&
+                boardSquareSymbols[possibleWinIndexes[0]] === boardSquareSymbols[possibleWinIndexes[2]]
+            ) {
+                completedRowData = {
+                    winningSymbol: boardSquareSymbols[possibleWinIndexes[0]],
+                    winningSquares: possibleWinIndexes
+                }
+            }
+        })
+        return completedRowData;
     }
 
     render() {
+        const completedRow = this.getCompletedRow();
         return (
             <>
                 <GameManagement 
-                    getCompletedRow={this.getCompletedRow}
+                    completedRow={completedRow}
                 />
                 <PlayField 
                     boardSquareSymbols={this.state.boardSquareSymbols}
-                    getCompletedRow={this.getCompletedRow}
+                    completedRow={completedRow}
                     markSquare={this.markSquare}
                 />
             </>
