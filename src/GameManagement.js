@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 
 class GameManagement extends Component {
 
@@ -7,20 +7,30 @@ class GameManagement extends Component {
         const { whoseTurn, completedRow, resetBoard } = this.props;
         return (
             <>
-                <View>
-                    <Text>It's {whoseTurn}'s turn</Text>
+                <View style={styles.container}>
+                    <Text style={styles.whoseTurn}>
+                        It's {whoseTurn}'s turn
+                    </Text>
                 </View>
-                {completedRow && (
-                    <View>
-                        <Button
-                            title="New Game"
-                            onPress={resetBoard}
-                        />
-                    </View>
-                )}
+                <View style={styles.container}>
+                    <Button
+                        title={completedRow ? "New Game" : "Restart Game"}
+                        onPress={resetBoard}
+                    />
+                </View>
             </>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        marginBottom: 20
+    },
+    whoseTurn: {
+        fontSize: 18,
+        fontWeight: "bold"
+    }
+})
 
 export default GameManagement;
