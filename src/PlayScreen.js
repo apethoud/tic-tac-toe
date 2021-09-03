@@ -69,6 +69,7 @@ class PlayScreen extends Component {
         return (
             <>
                 <GameManagement 
+                    whoseTurn={this.state.whoseTurn}
                     completedRow={completedRow}
                 />
                 <PlayField 
